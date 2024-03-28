@@ -12,8 +12,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import * as THREE from 'three'
-import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 
 const content = ref()
@@ -22,7 +22,7 @@ const scene = new THREE.Scene()
 // 设置场景背景
 scene.background = new THREE.Color(0xdcdcdc)
 
-const init = (path) => {
+const init = (path: string) => {
   if (content.value) {
     // 切换时先移除容器中的元素
     scene.clear()
@@ -80,7 +80,7 @@ onMounted(() => {
 })
 
 // 切换车辆
-const switchCar = (color) => {
+const switchCar = (color: any) => {
   init(`./glb/${color || 'red'}.glb`)
 }
 
